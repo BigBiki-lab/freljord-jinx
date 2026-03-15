@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="flashcardsmainstyle.css">
+
+</head>
+<body>
+
+<div class="sidenav">
+    <button class="dropdown-btn">Key Concepts Biology 1
+        <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+        <a href="Flash-cards-Inside-bacteria-1.html">Inside bacteria 1</a>
+        <a href="Flash-cards-Inside-bacteria-2.html">Inside bacteria 2</a>
+        <a href="#">Link 3</a>
+    </div>
+
+<!--    <button class="dropdown-btn">Key Concepts Biology 2-->
+<!--        <i class="fa fa-caret-down"></i>-->
+<!--    </button>-->
+<!--    <div class="dropdown-container">-->
+<!--        <a href="#">Link 1</a>-->
+<!--        <a href="#">Link 2</a>-->
+<!--        <a href="#">Link 3</a>-->
+<!--    </div>-->
+
+<!--    <button class="dropdown-btn">Cells and Control-->
+<!--        <i class="fa fa-caret-down"></i>-->
+<!--    </button>-->
+<!--    <div class="dropdown-container">-->
+<!--        <a href="#">Link 1</a>-->
+<!--        <a href="#">Link 2</a>-->
+<!--        <a href="#">Link 3</a>-->
+<!--    </div>-->
+
+<!--    <button class="dropdown-btn">Genetics-->
+<!--        <i class="fa fa-caret-down"></i>-->
+<!--    </button>-->
+<!--    <div class="dropdown-container">-->
+<!--        <a href="#">Link 1</a>-->
+<!--        <a href="#">Link 2</a>-->
+<!--        <a href="#">Link 3</a>-->
+<!--    </div>-->
+
+<!--    <button class="dropdown-btn">Natural Selection and Genetic Modification-->
+<!--        <i class="fa fa-caret-down"></i>-->
+<!--    </button>-->
+<!--    <div class="dropdown-container">-->
+<!--        <a href="#">Link 1</a>-->
+<!--        <a href="#">Link 2</a>-->
+<!--        <a href="#">Link 3</a>-->
+<!--    </div>-->
+
+<!--    <button class="dropdown-btn">Health, disease and the Development of Medicines-->
+<!--        <i class="fa fa-caret-down"></i>-->
+<!--    </button>-->
+<!--    <div class="dropdown-container">-->
+<!--        <a href="#">Link 1</a>-->
+<!--        <a href="#">Link 2</a>-->
+<!--        <a href="#">Link 3</a>-->
+<!--    </div>-->
+
+<!--    <button class="dropdown-btn">Particle Model-->
+<!--        <i class="fa fa-caret-down"></i>-->
+<!--    </button>-->
+<!--    <div class="dropdown-container">-->
+<!--        <a href="#">Link 1</a>-->
+<!--        <a href="#">Link 2</a>-->
+<!--        <a href="#">Link 3</a>-->
+<!--        <a href="#">Link 4</a>-->
+<!--    </div>-->
+
+<!--    <button class="dropdown-btn">Forces and Matter-->
+<!--        <i class="fa fa-caret-down"></i>-->
+<!--    </button>-->
+<!--    <div class="dropdown-container">-->
+<!--        <a href="#">Link 1</a>-->
+<!--        <a href="#">Link 2</a>-->
+<!--        <a href="#">Link 3</a>-->
+<!--        <a href="#">Link 4</a>-->
+<!--    </div>-->
+
+</div>
+<script>
+    /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+    var dropdown = document.getElementsByClassName("dropdown-btn");
+    var i;
+
+    for (i = 0; i < dropdown.length; i++) {
+      dropdown[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var dropdownContent = this.nextElementSibling;
+        if (dropdownContent.style.display === "block") {
+          dropdownContent.style.display = "none";
+        } else {
+          dropdownContent.style.display = "block";
+        }
+      });
+    }
+
+
+</script>
+</body>
+</html>

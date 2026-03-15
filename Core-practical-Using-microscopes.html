@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Core practical - Using microscopes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background-color: #EEF6DF;
+        }
+        h6 {
+        text-align: center;
+        color: #810541;
+        font-size: 50px;
+        margin-top: 0px;
+        margin: 0;
+        @media (max-width: 800px){
+            font-size: 28px;
+            }
+        }
+      h2 {
+        color: #3A5F0B;
+        text-align: center;
+        font-size: 30px;
+        font-weight: 800;
+        margin: 10px;
+        @media (max-width: 800px){
+            font-size: 20px;
+            }
+        }
+      h1 {
+        color: #004225;
+        text-align: center;
+        text-decoration-line: underline;
+        font-size: 45px;
+        margin: 40px;
+        margin-top: 1rem;
+        @media (max-width: 800px){
+            font-size: 25px;
+            }
+        }
+      h3 {
+        text-align: center;
+        color: #004225;
+        font-size: 45px;
+        margin-top: 5rem;
+        text-decoration-line: underline;
+        @media (max-width: 800px){
+            font-size: 25px;
+            }
+        }
+      h4 {
+        text-align: center;
+        color: #474973;
+        font-size: 40px;
+        margin-top: 10px;
+        margin-bottom: 500px;
+        @media (max-width: 800px){
+            font-size: 25px;
+            }
+        }
+      h5 {
+        text-align: center;
+        color: #474973;
+        font-size: 40px;
+        margin-top: 10px;
+        margin-bottom: 50px;
+        @media (max-width: 800px){
+            font-size: 25px;
+            }
+        }
+      img {
+        width: 900px;
+        margin-top: 2rem;
+        margin-bottom: 50px;
+        @media (max-width: 800px){
+            width: 100%;
+            }
+        }
+      div.center {
+        text-align: center;
+        margin: 300px;
+
+      @media (max-width: 600px) {iframe {
+             width: auto;
+             height: auto;
+             }
+        }
+        }
+
+         *{
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+h1{
+  font-size: 2.5rem;
+  font-family: 'Montserrat';
+  font-weight: normal;
+  color: #444;
+  text-align: center;
+  margin: 5rem 0;
+}
+
+.wrapper{
+  width: 90%;
+  margin: 0 auto;
+  max-width: 80rem;
+}
+
+.cols{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.col{
+  width: calc(25% - 2rem);
+  margin: 1rem;
+  cursor: pointer;
+}
+
+.container{
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+	-webkit-perspective: 1000px;
+	        perspective: 1000px;
+}
+
+.front,
+.back{
+  background-size: cover;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.25);
+  border-radius: 10px;
+	background-position: center;
+	-webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+	transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+	-o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+	transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+	transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+	-webkit-backface-visibility: hidden;
+	        backface-visibility: hidden;
+	text-align: center;
+	min-height: 280px;
+	height: auto;
+	border-radius: 10px;
+	color: #fff;
+	font-size: 2rem;
+}
+
+.back{
+  background: #cedce7;
+  background: -webkit-linear-gradient(45deg,  #cedce7 0%,#596a72 100%);
+  background: -o-linear-gradient(45deg,  #cedce7 0%,#596a72 100%);
+  background: linear-gradient(45deg,  #cedce7 0%,#596a72 100%);
+}
+
+.front:after{
+	position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    content: '';
+    display: block;
+    opacity: 0.8;
+    background-color: #004225;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    border-radius: 10px;
+}
+.container:hover .front,
+.container:hover .back{
+    -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.back{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.inner{
+    -webkit-transform: translateY(-50%) translateZ(60px) scale(0.94);
+            transform: translateY(-50%) translateZ(60px) scale(0.94);
+    top: 50%;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    outline: 1px solid transparent;
+    -webkit-perspective: inherit;
+            perspective: inherit;
+    z-index: 2;
+}
+
+.container .back{
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+}
+
+.container .front{
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+}
+
+.container:hover .back{
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.container:hover .front{
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.front .inner p{
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.front .inner p:after{
+<!--  content: '';-->
+  width: 4rem;
+  height: 2px;
+  position: absolute;
+  background: #C6D4DF;
+  display: block;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: -.75rem;
+}
+
+.front .inner span{
+  color: rgba(255,255,255,0.7);
+  font-family: 'Montserrat';
+  font-weight: 300;
+}
+
+@media screen and (max-width: 64rem){
+  .col{
+    width: calc(33.333333% - 2rem);
+  }
+}
+
+@media screen and (max-width: 48rem){
+  .col{
+    width: calc(50% - 2rem);
+  }
+}
+
+@media screen and (max-width: 32rem){
+  .col{
+    width: 100%;
+    margin: 0 0 2rem 0;
+  }
+}
+    </style>
+</head>
+<body>
+
+<!--<h1>Core practical - USING MICROSCOPES</h1>-->
+<!--<h2> <span style="color: #004225;">Learning outcome:</span>To understand how to investigate biological specimens using a microscope.</h2>-->
+
+<div class="wrapper">
+    <h1>Core practical - USING MICROSCOPES</h1>
+    <h2> <span style="color: #004225;">Learning outcome:</span>To understand how to investigate biological specimens using a microscope.</h2>
+    <div class="cols">
+        <div class="col" ontouchstart="this.classList.toggle('hover');">
+            <div class="container">
+                <div class="front" style="#">
+                    <div class="inner">
+                        <p>State the name of the part of a microscope where you would place the slide.</p>
+                        <!--                        <span>Lorem ipsum</span>-->
+                    </div>
+                </div>
+                <div class="back">
+                    <div class="inner">
+                        <p>Stage</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col" ontouchstart="this.classList.toggle('hover');">
+            <div class="container">
+                <div class="front" style="#">
+                    <div class="inner">
+                        <p>Define the term magnification.</p>
+                        <!--                        <p>Lorem ipsum</p>-->
+                    </div>
+                </div>
+                <div class="back">
+                    <div class="inner">
+                        <p>Enlarging the physical appearance/image of something.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col" ontouchstart="this.classList.toggle('hover');">
+            <div class="container">
+                <div class="front" style="#">
+                    <div class="inner">
+                        <p>Calculate the total magnification if the eyepiece lens is x10 and the objective lens is x5.</p>
+                        <!--                        <span>Lorem ipsum</span>-->
+                    </div>
+                </div>
+                <div class="back">
+                    <div class="inner">
+                        <p>Total magnification = 10x5 = 50</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col" ontouchstart="this.classList.toggle('hover');">
+            <div class="container">
+                <div class="front" style="#">
+                    <div class="inner">
+                        <p>Define the term resolution.</p>
+                        <!--                        <span>Lorem ipsum</span>-->
+                    </div>
+                </div>
+                <div class="back">
+                    <div class="inner">
+                        <p>The ability to distinguish between two points as separate structures.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style=" text-align: center;">
+    <img src="images/resolution.png" style="width: 600px; margin-top: 200px;" alt="resolution">
+</div>
+
+<div style=" text-align: center;">
+    <img src="images/microscope.png" style="width: 900px; margin-top: 200px;" alt="microscope">
+</div>
+
+<div style=" text-align: center;">
+    <img src="images/eye-piece-lens0.png" style="width: 900px; margin-top: 200px;" alt="microscope">
+</div>
+
+<div style=" text-align: center;">
+    <img src="images/eye-piece-lens1.png" style="width: 900px; margin-top: 200px;" alt="microscope">
+</div>
+
+<div style=" text-align: center;">
+    <img src="images/objective-lens0.png" style="width: 900px; margin-top: 200px;" alt="microscope">
+</div>
+
+<div style=" text-align: center;">
+    <img src="images/objective-lens1.png" style="width: 900px; margin-top: 200px;" alt="microscope">
+</div>
+
+<div style=" text-align: center;">
+    <img src="images/stage0.png" style="width: 900px; margin-top: 200px;" alt="microscope">
+</div>
+
+<div style=" text-align: center;">
+    <img src="images/stage1.png" style="width: 900px; margin-top: 200px;" alt="microscope">
+</div>
+
+<div style=" text-align: center;">
+    <img src="images/mirror0.png" style="width: 900px; margin-top: 200px;" alt="microscope">
+</div>
+
+<div style=" text-align: center;">
+    <img src="images/mirror1.png" style="width: 900px; margin-top: 200px;" alt="microscope">
+</div>
+
+<div style=" text-align: center;">
+    <img src="images/base0.png" style="width: 900px; margin-top: 200px;" alt="microscope">
+</div>
+
+<div style=" text-align: center;">
+    <img src="images/base1.png" style="width: 900px; margin-top: 200px;" alt="microscope">
+</div>
+
+<div style=" text-align: center;">
+    <img src="images/coarse-focusing-wheel0.png" style="width: 900px; margin-top: 200px;" alt="microscope">
+</div>
+
+<div style=" text-align: center;">
+    <img src="images/coarse-focusing-wheel1.png" style="width: 900px; margin-top: 200px;" alt="microscope">
+</div>
+
+<div style=" text-align: center;">
+    <img src="images/arm0.png" style="width: 900px; margin-top: 200px;" alt="microscope">
+</div>
+
+<div style=" text-align: center;">
+    <img src="images/arm1.png" style="width: 900px; margin-top: 200px;" alt="microscope">
+</div>
+
+<div style=" text-align: center;">
+    <img src="images/fine-focusing-wheel0.png" style="width: 900px; margin-top: 200px;" alt="microscope">
+</div>
+
+<div style=" text-align: center;">
+    <img src="images/fine-focusing-wheel1.png" style="width: 900px; margin-top: 200px;" alt="microscope">
+</div>
+
+<div class="wrapper">
+    <h3>Mini white boards</h3>
+<!--    <h2> <span style="color: #004225;">Learning outcome:</span>To understand how to investigate biological specimens using a microscope.</h2>-->
+    <div class="cols">
+        <div class="col" ontouchstart="this.classList.toggle('hover');">
+            <div class="container">
+                <div class="front" style="#">
+                    <div class="inner">
+                        <p>Thin piece of glass used to hold a specimen in place on a slide. It also keeps the specimen flat and stops it drying out.</p>
+                        <!--                        <span>Lorem ipsum</span>-->
+                    </div>
+                </div>
+                <div class="back">
+                    <div class="inner">
+                        <p>Coverslip</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col" ontouchstart="this.classList.toggle('hover');">
+            <div class="container">
+                <div class="front" style="#">
+                    <div class="inner">
+                        <p>Dye used to colour parts of a cell to make them easier to see.</p>
+                        <!--                        <p>Lorem ipsum</p>-->
+                    </div>
+                </div>
+                <div class="back">
+                    <div class="inner">
+                        <p>Stain / iodine solution</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col" ontouchstart="this.classList.toggle('hover');">
+            <div class="container">
+                <div class="front" style="#">
+                    <div class="inner">
+                        <p>Glass sheet that a specimen is put on.</p>
+                        <!--                        <span>Lorem ipsum</span>-->
+                    </div>
+                </div>
+                <div class="back">
+                    <div class="inner">
+                        <p>Slide</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col" ontouchstart="this.classList.toggle('hover');">
+            <div class="container">
+                <div class="front" style="#">
+                    <div class="inner">
+                        <p>Wheel on a microscope that moves parts of the microscope a small amount to bring the image into focus.</p>
+                        <!--                        <span>Lorem ipsum</span>-->
+                    </div>
+                </div>
+                <div class="back">
+                    <div class="inner">
+                        <p>Fine focusing wheel</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper">
+<!--    <h3>Mini white boards</h3>-->
+    <!--    <h2> <span style="color: #004225;">Learning outcome:</span>To understand how to investigate biological specimens using a microscope.</h2>-->
+    <div class="cols">
+        <div class="col" ontouchstart="this.classList.toggle('hover');">
+            <div class="container">
+                <div class="front" style="#">
+                    <div class="inner">
+                        <p>Thin piece of glass used to hold a specimen in place on a slide. It also keeps the specimen flat and stops it drying out.</p>
+                        <!--                        <span>Lorem ipsum</span>-->
+                    </div>
+                </div>
+                <div class="back">
+                    <div class="inner">
+                        <p>Coverslip</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col" ontouchstart="this.classList.toggle('hover');">
+            <div class="container">
+                <div class="front" style="#">
+                    <div class="inner">
+                        <p>Dye used to colour parts of a cell to make them easier to see.</p>
+                        <!--                        <p>Lorem ipsum</p>-->
+                    </div>
+                </div>
+                <div class="back">
+                    <div class="inner">
+                        <p>Stain / iodine solution</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col" ontouchstart="this.classList.toggle('hover');">
+            <div class="container">
+                <div class="front" style="#">
+                    <div class="inner">
+                        <p>Glass sheet that a specimen is put on.</p>
+                        <!--                        <span>Lorem ipsum</span>-->
+                    </div>
+                </div>
+                <div class="back">
+                    <div class="inner">
+                        <p>Slide</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col" ontouchstart="this.classList.toggle('hover');">
+            <div class="container">
+                <div class="front" style="#">
+                    <div class="inner">
+                        <p>Wheel on a microscope that moves parts of the microscope a small amount to bring the image into focus.</p>
+                        <!--                        <span>Lorem ipsum</span>-->
+                    </div>
+                </div>
+                <div class="back">
+                    <div class="inner">
+                        <p>Fine focusing wheel</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h3>Slide preparation</h3>
+<div style=" text-align: center;">
+    <img src="images/slide-preparation.png" style="width: 1200px; margin-top: 50px;" alt="slide preparation">
+</div>
+
+<div class="center">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/SX6mow1AExI?si=It_Jc-93bfgNxJpT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+<div style=" text-align: center;">
+    <img src="images/how-to-calculate-magnification.png" alt="magnification">
+</div>
+
+<div style=" text-align: center;">
+    <img src="images/which-cells.png" alt="which cells">
+</div>
+
+<div style=" text-align: center;">
+    <img src="images/stain.png" alt="stain">
+</div>
+
+<div style=" text-align: center;">
+    <img src="images/cover-slip.png" alt="cover slip">
+</div>
+
+<div style=" text-align: center;">
+    <img src="images/magnification.png" alt="magnification">
+</div>
+
+<div style=" text-align: center;">
+    <img src="images/the-results.png" style="width: 900px; margin-top: 200px;" alt="microscope">
+</div>
+
+<div style=" text-align: center;">
+    <img src="images/microscope-drawing-tips.png" style="width: 900px; margin-top: 200px;" alt="microscope">
+</div>
+
+<div style=" text-align: center;">
+    <img src="images/microscope-past-paper-question-1.png" style="width: 1000px; margin-top: 200px;" alt="microscope">
+</div>
+
+<div style=" text-align: center;">
+    <img src="images/microscope-past-paper-question-1-answer.png" style="width: 1200px; margin-top: 200px;" alt="microscope">
+</div>
+
+<div style=" text-align: center;">
+    <img src="images/microscope-past-paper-question-2.png" style="width: 1000px; margin-top: 200px;" alt="microscope">
+</div>
+
+<div style=" text-align: center;">
+    <img src="images/microscope-past-paper-question-2-answer.png" style="width: 1000px; margin-top: 200px;" alt="microscope">
+</div>
+
+
+</body>
+</html>
